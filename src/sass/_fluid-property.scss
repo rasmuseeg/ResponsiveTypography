@@ -1,0 +1,11 @@
+@mixin fluid-property($property, $property-min, $property-max, $breakpoint-min, $breakpoint-max, $unit: em, $viewportUnit: vw) {
+    #{$property}: #{$property-min}#{$unit};
+
+    @media(min-width: #{breakpoint-min}#{$unit}){
+      #{$property}: calc(#{$property-min}#{$unit} + (#{$property-max} - #{$property-min}) * ((100#{$viewportUnit} - #{$breakpoint-min}#{$unit})/(#{$breakpoint-max} - #{$breakpoint-min})));
+    }
+
+    @media(min-width: #{$breakpoint-max}#{$unit}){
+      #{$property}: #{$property-max}#{$unit};
+    }
+}

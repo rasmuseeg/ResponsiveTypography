@@ -1,0 +1,11 @@
+.fluid-property(@property, @property-min, @property-max, @breakpoint-min, @breakpoint-max, @unit: em, @viewport: vw) {
+    @{property}: unit(@property-min, @unit);
+
+    @media(min-width: unit(@breakpoint-min,@unit)){
+      @{property}: ~"calc(@{property-min}@{unit} + (@{property-max} - @{property-min}) * ((100@{viewport} - @{breakpoint-min}@{unit})/(@{breakpoint-max} - @{breakpoint-min})))";
+    }
+
+    @media(min-width: unit(@breakpoint-max, @unit)){
+      @{property}: unit(@property-max, @unit);
+    }
+}
