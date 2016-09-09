@@ -20,9 +20,10 @@ p {
 
 .dropcap:first-letter {
   float: left;
-  padding: 3px;
-  font-weight: 800;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 700;
+  line-height: 0.5em;
+  padding-top: 0.18em;
+  padding-right: 0.1em;
 
   @include fluid-property(font-size, 2, 3, 31.25, 75);
   @include fluid-property(line-height, 2, 3, 31.25, 75);
